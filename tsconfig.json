@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "state": [
+        "dist/state"
+      ],
+      "state/*": [
+        "dist/state/*"
+      ]
+    }
   }
 }

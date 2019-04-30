@@ -1,0 +1,34 @@
+.intro {
+  height: 100vh;
+  background: url('/assets/img/seattle-skyline.jpg') no-repeat center center
+    fixed; // Photo by oakie on Unsplash
+  background-size: cover;
+}
+
+.overlay {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .intro-text {
+    font-size: 4rem;
+    text-align: center;
+    &,
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.mobile {
+  &.intro-text {
+    font-size: default;
+  }
+  &.ng-seattle-logo {
+    height: 150px;
+    width: auto;
+    // padding-top: 50px;
+  }
+}
