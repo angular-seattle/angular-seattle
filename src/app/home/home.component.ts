@@ -10,10 +10,12 @@ import { StateService } from 'state';
 })
 export class HomeComponent implements OnInit {
   isHandset$: Observable<boolean>;
+  isHandsetPortrait$: Observable<boolean>;
 
   constructor(private stateService: StateService) {}
 
   ngOnInit() {
     this.isHandset$ = this.stateService.isHandset;
+    this.isHandsetPortrait$ = this.stateService.isHandsetPortrait;
   }
 }

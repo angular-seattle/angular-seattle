@@ -11,9 +11,19 @@ export class StateService {
     .observe(Breakpoints.Handset)
     .pipe(map((result) => result.matches));
 
+  private isHandsetPortrait$: Observable<
+    boolean
+  > = this.breakpointObserver
+    .observe(Breakpoints.HandsetPortrait)
+    .pipe(map((result) => result.matches));
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   get isHandset(): Observable<boolean> {
     return this.isHandset$;
+  }
+
+  get isHandsetPortrait(): Observable<boolean> {
+    return this.isHandsetPortrait$;
   }
 }

@@ -23,6 +23,9 @@
 }
 
 .mobile {
+  &.intro.handset-portrait {
+    background-position: -210px center;
+  }
   &.intro-text {
     font-size: default;
   }
