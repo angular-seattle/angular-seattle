@@ -1,4 +1,6 @@
-# NgSeattle
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fc268b82-6a3d-4a14-a5ad-b510f4e610c2/deploy-status)](https://app.netlify.com/sites/compassionate-goldstine-b77aaa/deploys)
+
+# Angular Seattle
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
