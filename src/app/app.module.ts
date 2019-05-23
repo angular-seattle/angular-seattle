@@ -16,9 +16,10 @@ import {
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { StateModule } from 'state';
+import { NavLinksComponent } from './nav-links/nav-links.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, NavLinksComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +27,7 @@ import { StateModule } from 'state';
     CoreModule,
     LayoutModule,
     MatToolbarModule,
+    MatListModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,

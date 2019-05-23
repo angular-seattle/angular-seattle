@@ -4,7 +4,12 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
+    path: 'events',
+    loadChildren: './events/events.module#EventsModule'
+  },
+  {
     path: '',
+    pathMatch: 'full',
     component: HomeComponent
   }
 ];
