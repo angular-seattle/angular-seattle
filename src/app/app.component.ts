@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { StateService } from 'state';
+import { AppStateService } from 'state';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,12 @@ import { StateService } from 'state';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  /** An Observable indicating if the app is being viewed on a handset */
   isHandset$: Observable<boolean>;
 
-  constructor(private stateService: StateService) {}
+  constructor(private appState: AppStateService) {}
 
   ngOnInit() {
-    this.isHandset$ = this.stateService.isHandset;
+    this.isHandset$ = this.appState.isHandset$;
   }
 }
