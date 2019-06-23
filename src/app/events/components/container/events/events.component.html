@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Upcoming Events</h1>
+  <app-event-grid
+    [loading]="loading$ | async"
+    [events]="upcomingEvents$ | async"
+    [mobile]="isHandset$ | async"
+  ></app-event-grid>
+  <h1>Past Events</h1>
+  <app-event-grid
+    [loading]="loading$ | async"
+    [events]="pastEvents$ | async"
+    [mobile]="isHandset$ | async"
+  ></app-event-grid>
+</div>

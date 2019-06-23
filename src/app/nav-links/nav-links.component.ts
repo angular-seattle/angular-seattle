@@ -6,6 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nav-links.component.scss']
 })
 export class NavLinksComponent {
+  /** Indicates whether to display the nav links horizontally or vertically */
   @Input() horizontal: boolean;
+
   constructor() {}
 }

@@ -1,0 +1,19 @@
+<ng-container *ngIf="!loading">
+  <div
+    class="grid-container"
+    [ngClass]="{
+      mobile: mobile
+    }"
+    *ngIf="events.length > 0; else noEvents"
+  >
+    <div class="event" *ngFor="let event of events">
+      <app-event [event]="event"></app-event>
+    </div>
+  </div>
+  <ng-template #noEvents>
+    <div class="no-events" *ngIf="events.length === 0">No Events Found</div>
+  </ng-template>
+</ng-container>
+<div class="center spinner-container" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>

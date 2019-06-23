@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { EventsRoutingModule } from './events-routing.module';
-import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
+import { EventsComponent } from './components/container/events/events.component';
+import { EventGridComponent } from './components/presentation/event-grid/event-grid.component';
+import { EventComponent } from './components/presentation/event/event.component';
+import { SharedModule } from '../shared/shared.module';
+import { MeetupModule } from 'state/meetup';
+import { StateModule } from 'state';
 
 @NgModule({
-  declarations: [UpcomingEventsComponent],
-  imports: [CommonModule, EventsRoutingModule]
+  declarations: [EventsComponent, EventGridComponent, EventComponent],
+  imports: [
+    CommonModule,
+    EventsRoutingModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    SharedModule,
+    StateModule,
+    MeetupModule
+  ]
 })
 export class EventsModule {}

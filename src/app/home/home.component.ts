@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { StateService } from 'state';
+import { AppStateService } from 'state';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +9,15 @@ import { StateService } from 'state';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  /** Indicates if the screen is a handset */
   isHandset$: Observable<boolean>;
+  /** Indicates if the screen is in handset portrait mode */
   isHandsetPortrait$: Observable<boolean>;
 
-  constructor(private stateService: StateService) {}
+  constructor(private appState: AppStateService) {}
 
   ngOnInit() {
-    this.isHandset$ = this.stateService.isHandset;
-    this.isHandsetPortrait$ = this.stateService.isHandsetPortrait;
+    this.isHandset$ = this.appState.isHandset$;
+    this.isHandsetPortrait$ = this.appState.isHandsetPortrait$;
   }
 }

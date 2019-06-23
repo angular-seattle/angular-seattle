@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
+import { EventsComponent } from './components/container/events/events.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: UpcomingEventsComponent
+    component: EventsComponent
   }
 ];
 
