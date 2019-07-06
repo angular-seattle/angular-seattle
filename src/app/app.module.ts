@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StateModule } from 'state';
 import { NavLinksComponent } from './nav-links/nav-links.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavLinksComponent],
@@ -27,7 +29,8 @@ import { NavLinksComponent } from './nav-links/nav-links.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    StateModule.forRoot()
+    StateModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
