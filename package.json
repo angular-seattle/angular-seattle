@@ -1,6 +1,6 @@
 {
   "name": "ng-seattle",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "scripts": {
     "ng": "ng",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
