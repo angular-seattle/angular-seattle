@@ -48,6 +48,7 @@
     "@types/node": "~8.9.4",
     "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "^5.0.1",
+    "cz-conventional-changelog": "^3.0.2",
     "gh-pages": "^2.0.1",
     "husky": "2.3.0",
     "jasmine-core": "~2.99.1",
@@ -79,5 +80,10 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
