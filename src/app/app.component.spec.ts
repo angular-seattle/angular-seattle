@@ -12,6 +12,7 @@ import { NavLinksComponent } from './nav-links/nav-links.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StateModule } from 'state';
+import { ServiceWorkerService } from './service-worker/service-worker.service';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -30,7 +31,8 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatToolbarModule,
         StateModule.forRoot()
-      ]
+      ],
+      providers: [{ provide: ServiceWorkerService, useValue: { checkForUpdate: () => false } }]
     }).compileComponents();
   }));
 
