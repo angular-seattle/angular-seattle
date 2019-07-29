@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
       # specify the version you desire here
       - image: circleci/node:lts-browsers
@@ -41,3 +41,8 @@ jobs:
           command: |
             npm run build:lib
             npm run test:headless
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
