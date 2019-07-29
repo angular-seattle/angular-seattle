@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fc268b82-6a3d-4a14-a5ad-b510f4e610c2/deploy-status)](https://app.netlify.com/sites/compassionate-goldstine-b77aaa/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8dec2248-f76e-449e-ab35-1132c7bdb6c7/deploy-status)](https://app.netlify.com/sites/angular-seattle/deploys)
 
 # Angular Seattle
 
