@@ -26,7 +26,10 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm ci
+      - run:
+          command: |
+            export NG_CLI_ANALYTICS=ci
+            npm ci
 
       - save_cache:
           paths:
@@ -34,4 +37,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm run build:lib && npm run test:headless
+      - run:
+          command: |
+            npm run build:lib
+            npm run test:headless
