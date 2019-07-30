@@ -27,9 +27,7 @@ jobs:
             - v1-dependencies-
 
       - run:
-          command: |
-            export NG_CLI_ANALYTICS=ci
-            npm ci
+          command: npm ci
 
       - save_cache:
           paths:
@@ -40,7 +38,11 @@ jobs:
       - run:
           command: |
             npm run build:lib
-            npm run test:headless
+            npm run test:headless -- --codeCoverage
+
+      - store_artifacts:
+          path: coverage
+
 workflows:
   version: 2
   test:
