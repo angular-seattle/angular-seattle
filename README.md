@@ -8,4 +8,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
+## Current Features
+
+- ✅ Angular 8
+- ✅ PWA
+- ✅ CI/CD (CircleCI and Netlify)
+- ✅ Angular Material
+- ✅ Event Information
+- ✅ Past talks
+- ✅ Twitter
+
+## Future Feature Ideas
+
+- Contact sharing
+- Talk proposals
+- Industry tools (Universal, Nx, Greenkeeper, etc...)
+- Blog
+- Other social media (Slack)
+- Job Board
+- Whatever YOU want  
+  [Open an issue with a feature request!](https://github.com/angular-seattle/angular-seattle/issues/new?assignees=bniedermeyer&labels=enhancement&template=feature_request.md&title=%5BFEATURE%5D+)
+
 Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute to the project. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) prior to contributing.
