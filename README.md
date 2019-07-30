@@ -4,6 +4,8 @@
 
 # Angular Seattle
 
+![Angular Seattle](docs/img/ng-seattle.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute to the project. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) prior to contributing.
