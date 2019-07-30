@@ -29,7 +29,7 @@ jobs:
       - run:
           command: |
             export NG_CLI_ANALYTICS=ci
-            npm ci
+            npm install
 
       - save_cache:
           paths:
@@ -40,7 +40,11 @@ jobs:
       - run:
           command: |
             npm run build:lib
-            npm run test:headless
+            npm run test:headless -- --codeCoverage
+
+      - store_test_results:
+          path: coverage
+
 workflows:
   version: 2
   test:
