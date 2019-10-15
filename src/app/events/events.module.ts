@@ -8,7 +8,7 @@ import { EventsComponent } from './components/container/events/events.component'
 import { EventGridComponent } from './components/presentation/event-grid/event-grid.component';
 import { EventComponent } from './components/presentation/event/event.component';
 import { SharedModule } from '../shared/shared.module';
-import { MeetupModule } from 'state/meetup';
+import { EventModule } from 'state/event';
 import { StateModule } from 'state';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { StateModule } from 'state';
     MatProgressSpinnerModule,
     SharedModule,
     StateModule,
-    MeetupModule
+    EventModule
   ]
 })
 export class EventsModule {}

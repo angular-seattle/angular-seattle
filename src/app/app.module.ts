@@ -22,7 +22,6 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     LayoutModule,
     MatToolbarModule,
     MatListModule,
