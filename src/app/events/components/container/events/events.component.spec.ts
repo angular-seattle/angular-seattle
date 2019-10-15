@@ -5,11 +5,11 @@ import { of } from 'rxjs';
 
 import { EventsComponent } from './events.component';
 import { AppStateService } from 'state';
-import { MeetupStateService } from 'state/meetup';
 import { EventGridComponent } from '../../presentation/event-grid/event-grid.component';
 import { EventComponent } from '../../presentation/event/event.component';
 import { SafePipe } from 'src/app/shared/pipes/safe-pipe.pipe';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { EventStateService } from 'state/event';
 
 describe('EventsComponent', () => {
   let component: EventsComponent;
@@ -19,7 +19,7 @@ describe('EventsComponent', () => {
       return of(false);
     }
   };
-  const mockMeetupStateService = {
+  const mockEventStateService = {
     get upcomingEvents$() {
       return of([]);
     },
@@ -38,7 +38,7 @@ describe('EventsComponent', () => {
       declarations: [EventsComponent, EventGridComponent, EventComponent, SafePipe],
       providers: [
         { provide: AppStateService, useValue: mockAppStateService },
-        { provide: MeetupStateService, useValue: mockMeetupStateService }
+        { provide: EventStateService, useValue: mockEventStateService }
       ]
     }).compileComponents();
   }));
@@ -55,7 +55,7 @@ describe('EventsComponent', () => {
 
   describe('ngOnInit', () => {
     it('should call the MeetupStateService', () => {
-      const service = TestBed.get(MeetupStateService);
+      const service = TestBed.get(EventStateService);
       const spy = spyOn(service, 'refreshEvents');
       component.ngOnInit();
       expect(spy).toHaveBeenCalled();

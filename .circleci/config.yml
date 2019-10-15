@@ -38,7 +38,7 @@ jobs:
       - run:
           command: |
             npm run build:lib
-            npm run test:headless -- --codeCoverage
+            npm run test:headless -- --codeCoverage --progress false
 
       - store_artifacts:
           path: coverage

@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "Angular Seattle @ Google South Lake Union",
+    "date": "2019-10-08T19:00:00",
+    "venue": {
+      "name": "Google South Lake Union",
+      "address": "620 Boren Ave N",
+      "city": "Seattle",
+      "country": "USA"
+    },
+    "link": "https://www.meetup.com/Angular-Seattle/events/265033152/",
+    "description": ""
+  }
+]
