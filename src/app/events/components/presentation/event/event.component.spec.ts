@@ -1,46 +1,64 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { EventComponent } from './event.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
-import { SafePipe } from 'src/app/shared/pipes/safe-pipe.pipe';
-import { Event } from 'state/event';
+import { of } from 'rxjs';
 
-describe('EventComponent', () => {
-  let component: EventComponent;
-  let fixture: ComponentFixture<EventComponent>;
+import { EventsComponent } from '../../container/events/events.component';
+import { AppStateService } from 'state';
+import { MeetupStateService } from 'state/meetup';
+import { EventGridComponent } from '../../presentation/event-grid/event-grid.component';
+import { EventComponent } from './event.component';
+import { SafePipe } from 'src/app/shared/pipes/safe-pipe.pipe';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+describe('EventsComponent', () => {
+  let component: EventsComponent;
+  let fixture: ComponentFixture<EventsComponent>;
+  const mockAppStateService = {
+    get isHandset$() {
+      return of(false);
+    }
+  };
+  const mockMeetupStateService = {
+    get upcomingEvents$() {
+      return of([]);
+    },
+    pastEvents$(val) {
+      return of([]);
+    },
+    get loading$() {
+      return of(false);
+    },
+    refreshEvents: () => {}
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule],
-      declarations: [EventComponent, SafePipe]
+      imports: [MatProgressSpinnerModule, MatCardModule],
+      declarations: [EventsComponent, EventGridComponent, EventComponent, SafePipe],
+      providers: [
+        { provide: AppStateService, useValue: mockAppStateService },
+        { provide: MeetupStateService, useValue: mockMeetupStateService }
+      ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventComponent);
-    const event = getEvent();
+    fixture = TestBed.createComponent(EventsComponent);
     component = fixture.componentInstance;
-    component.event = event;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
 
-function getEvent(): Event {
-  return {
-    description: 'This is an event description.',
-    id: '257143770',
-    link: 'https://www.meetup.com/Angular-Seattle/events/257143770/',
-    date: '2018-12-18',
-    name: 'A Social Thing 🎉',
-    venue: {
-      address: '3417 Evanston Avenue North',
-      city: 'Seattle',
-      country: 'US',
-      name: 'SWeL Restaurant'
-    }
-  };
-}
+  describe('ngOnInit', () => {
+    it('should call the MeetupStateService', () => {
+      const service = TestBed.get(MeetupStateService);
+      const spy = spyOn(service, 'refreshEvents');
+      component.ngOnInit();
+      expect(spy).toHaveBeenCalled();
+    });
+  });
+});
