@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EventStateService } from 'state/event';
+import { MeetupStateService } from 'state/meetup';
 import { Observable } from 'rxjs';
 import { AppStateService } from 'state';
-import { Event } from 'state/event/event.model';
+import { Event } from 'state/meetup/event.model';
 
 @Component({
   selector: 'app-events',
@@ -20,11 +20,11 @@ export class EventsComponent implements OnInit {
   /** Indicates if the current screen is a handset */
   isHandset$: Observable<boolean>;
 
-  constructor(private appState: AppStateService, private eventsState: EventStateService) {}
+  constructor(private appState: AppStateService, private eventsState: MeetupStateService) {}
 
   ngOnInit() {
     this.upcomingEvents$ = this.eventsState.upcomingEvents$;
-    this.pastEvents$ = this.eventsState.pastEvents$();
+    this.pastEvents$ = this.eventsState.pastEvents$(true);
     this.loading$ = this.eventsState.loading$;
     this.isHandset$ = this.appState.isHandset$;
     this.eventsState.refreshEvents();
